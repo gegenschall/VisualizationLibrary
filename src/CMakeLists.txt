@@ -53,6 +53,15 @@ if(VL_GUI_QT4_SUPPORT)
 	add_subdirectory("vlQt4")
 endif()
 
+# Qt5
+option(VL_GUI_QT5_SUPPORT "Build Qt5 support" OFF)
+if(VL_GUI_QT5_SUPPORT)
+	find_package(Qt5Core)
+	find_package(Qt5Gui)
+	find_package(Qt5OpenGL)
+	add_subdirectory("vlQt5")
+endif()
+
 if(VL_PLATFORM_WINDOWS)
 	option(VL_GUI_WIN32_SUPPORT "Build Win32 support" OFF)
 endif()
